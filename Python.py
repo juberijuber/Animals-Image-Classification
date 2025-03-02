@@ -2,7 +2,8 @@
 # <a href="https://colab.research.google.com/github/juberijuber/Image-Classification/blob/main/Image%20Classification%20using_our_dataset.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
 # %%
-from keras.models import Sequential
+import keras
+from keras.models import Sequential 
 from keras.layers import Dense
 from keras.layers import Convolution2D
 from keras.layers import MaxPooling2D
@@ -100,7 +101,7 @@ x=image.img_to_array(img)
 
 
 # %%
- x.shape
+x.shape
 
 # %% [markdown]
 # 1. Even if you are predicting a single image, the model still expects the input to be in a batch format
