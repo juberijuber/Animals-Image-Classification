@@ -2,7 +2,6 @@
 # <a href="https://colab.research.google.com/github/juberijuber/Image-Classification/blob/main/Image%20Classification%20using_our_dataset.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
 # %%
-import keras
 from keras.models import Sequential 
 from keras.layers import Dense
 from keras.layers import Convolution2D
