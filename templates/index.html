@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animal Image Classifier</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Animal Image Classifier</h1>
+            <p>Upload an image to identify bears, crows, elephants, racoons, or rats</p>
+        </header>
+
+        <div class="upload-container">
+            <div class="upload-box" id="drop-area">
+                <form id="upload-form" enctype="multipart/form-data">
+                    <input type="file" id="file-input" name="file" accept=".jpg, .jpeg, .png" hidden>
+                    <div class="upload-label">
+                        <img src="{{ url_for('static', filename='img/upload-icon.svg') }}" alt="Upload" id="upload-icon">
+                        <label for="file-input" id="file-label">Drag & Drop or Click to Upload</label>
+                        <p id="file-name"></p>
+                    </div>
+                    <button type="submit" id="upload-button">Classify Image</button>
+                </form>
+            </div>
+
+            <div class="result-container" id="result-container" style="display: none;">
+                <h2>Classification Result</h2>
+                <div class="result-flex">
+                    <div class="result-image">
+                        <img id="result-img" src="" alt="Uploaded Image">
+                    </div>
+                    <div class="result-details">
+                        <p>Detected: <span id="result-class" class="highlight"></span></p>
+                        <p>Confidence: <span id="result-confidence" class="highlight"></span></p>
+                        <div class="progress-bar">
+                            <div id="progress-fill"></div>
+                        </div>
+                    </div>
+                </div>
+                <button id="try-again-button">Try Another Image</button>
+            </div>
+        </div>
+
+        <div class="loading-overlay" id="loading-overlay">
+            <div class="spinner"></div>
+            <p>Analyzing image...</p>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
